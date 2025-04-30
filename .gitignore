@@ -1,27 +1,62 @@
-# Byte-compiled files
+# Python bytecode
 __pycache__/
 *.py[cod]
+*.pyo
+*.pyd
 
-# Virtual environment
+# Virtual environments
 venv/
 .env/
+.venv/
 
-# Jupyter Notebook checkpoints
+# Logs and runtime
+*.log
+logs/
+*.pid
+*.sqlite3
+
+# Jupyter
 .ipynb_checkpoints/
 
-# Logs
-*.log
-
-# Data files
+# Data & models
 data/
-
-# Model files
 models/
+checkpoints/
+artifacts/
+outputs/
 
-# IDE-specific files
+# DVC cache
+.dvc/
+.dvc/cache/
+
+# ML experiment tracking
+mlruns/
+mlflow.db
+
+# Test reports
+htmlcov/
+.coverage
+.cache/
+.tox/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# VSCode & JetBrains
 .vscode/
 .idea/
 
 # OS-specific files
 .DS_Store
 Thumbs.db
+
+# Docker & build
+*.tar
+*.img
+*.container
+__build__/
+
+# Other
+*.bak
+*.swp

@@ -3,3 +3,16 @@ pandas
 scikit-learn
 fastapi
 uvicorn[standard]
+pydantic
+joblib
+matplotlib
+seaborn
+scipy
+# For Jupyter Notebook
+jupyter
+# For Streamlit
+streamlit
+# For Pytest
+pytest
+# For coverage
+pytest-cov

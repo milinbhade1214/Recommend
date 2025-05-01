@@ -1,2 +1,3 @@
 #!/bin/bash
-uvicorn src.api:app --host 0.0.0.0 --port 8000
+# Start FastAPI server with uvicorn
+uvicorn scripts.serve:app --host 0.0.0.0 --port 8000

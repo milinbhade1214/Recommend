@@ -18,17 +18,6 @@ def load_raw_data():
     return movies_df, ratings_df
 
 
-'''
-Join on movieId
-
-Drop timestamp
-
-Encode userId and movieId into dense ints
-
-Optional: parse genres (multi-hot or simple string split)
-
-Save the final DataFrame to data/processed/ratings_clean.csv
-'''
 def preprocess(path):
     # Load the raw data
     movies_df, ratings_df = load_raw_data()
@@ -51,14 +40,23 @@ def preprocess(path):
     # Save the final DataFrame to data/processed/ratings_clean.csv
     merged_df.to_csv(output_path, index=False)
 
+# Load the ratings data
+def load_ratings_data():
+    # Load the processed data
+    ratings_df = pd.read_csv(output_path)
+    return ratings_df
+
 
 if __name__ == "__main__":
     # Create processed directory if it doesn't exist
     PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
 
-    # Preprocess the data
-    preprocess(output_path)
-    print(f"Preprocessed data saved to {output_path}")
+    if not output_path.exists():
+        preprocess(output_path)
+        print(f"Preprocessed data saved to {output_path}")
+    else:
+        print(f"Preprocessed file already exists at {output_path}")
+        
 
 
 

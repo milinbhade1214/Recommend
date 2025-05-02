@@ -1,6 +1,11 @@
 import pytest
 import pandas as pd
+import sys
 from pathlib import Path
+
+# Add src to the Python path
+sys.path.append(str(Path(__file__).resolve().parents[2] / "src"))
+
 from src.recommender import PopularityRecommender
 
 # Fixture to create mock ratings
